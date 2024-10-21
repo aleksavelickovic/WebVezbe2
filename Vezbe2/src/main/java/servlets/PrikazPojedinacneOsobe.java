@@ -37,10 +37,15 @@ public class PrikazPojedinacneOsobe extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		ServletContext servletContext = getServletContext();
 		ArrayList<Osoba> osobe = (ArrayList<Osoba>) servletContext.getAttribute("osobe");
+		response.getWriter().append("<html><body><p>Ime: ");
 		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getIme());
+		response.getWriter().append("</p><p>Prezime: ");
 		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getPrezime());
+		response.getWriter().append("</p><p>Korisnicko ime: ");
 		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getKorIme());
+		response.getWriter().append("</p><p>Lozinka: ");
 		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getLozinka());
+		response.getWriter().append("</html></body> ");
 	}
 
 	/**
