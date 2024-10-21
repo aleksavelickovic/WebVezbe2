@@ -33,6 +33,7 @@ public class IzmenaOsobe extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletContext servletContext = getServletContext();
 		ArrayList<Osoba> osobe = (ArrayList<Osoba>) servletContext.getAttribute("osobe");
+		String kveriString = request.getQueryString();
 		
 		response.getWriter().append("<!DOCTYPE html>\r\n"
 				+ "<html>\r\n"
@@ -43,7 +44,7 @@ public class IzmenaOsobe extends HttpServlet {
 				+ "<body>\r\n"
 				+ "<h1>izmeni ovu osobu: </h1>\r\n"
 				+ "\r\n"
-				+ "<form action=\"IzmenaOsobe\" method=\"POST\">\r\n"
+				+ "<form action=\"IzmenaOsobe?" + kveriString + "\" method=\"POST\">\r\n"
 				+ "	<label>Ime:</label>\r\n"
 				+ "	<input type=\"text\" name=\"imee\" value=\""  + osobe.get(Integer.parseInt(request.getQueryString())).getIme()  +  "\" />\r\n"
 				+ "	<label>Prezime:</label>\r\n"
@@ -61,6 +62,17 @@ public class IzmenaOsobe extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		ServletContext servletContext = getServletContext();
+		ArrayList<Osoba> osobe = (ArrayList<Osoba>) servletContext.getAttribute("osobe");
+		
+		String imeString = request.getParameter("imee");
+		String prezimeString = request.getParameter("prezimee");
+		
+		osobe.get(Integer.parseInt(request.getQueryString())).setIme(imeString);
+		osobe.get(Integer.parseInt(request.getQueryString())).setPrezime(prezimeString);
+		
+		response.sendRedirect("./PrikazOsobaServlet");
+		
 		doGet(request, response);
 	}
 
