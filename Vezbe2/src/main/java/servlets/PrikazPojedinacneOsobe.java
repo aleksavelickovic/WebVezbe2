@@ -39,6 +39,8 @@ public class PrikazPojedinacneOsobe extends HttpServlet {
 		ArrayList<Osoba> osobe = (ArrayList<Osoba>) servletContext.getAttribute("osobe");
 		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getIme());
 		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getPrezime());
+		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getKorIme());
+		response.getWriter().append(osobe.get(Integer.parseInt(request.getQueryString())).getLozinka());
 	}
 
 	/**

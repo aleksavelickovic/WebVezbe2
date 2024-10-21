@@ -4,11 +4,15 @@ public class Osoba {
 
 	private String ime;
 	private String prezime;
+	private String korIme;
+	private String lozinka;
 
-	public Osoba(String ime, String prezime) {
+	public Osoba(String ime, String prezime, String korIme, String lozinka) {
 		super();
 		this.ime = ime;
 		this.prezime = prezime;
+		this.korIme = korIme;
+		this.lozinka = lozinka;
 	}
 
 	public String getIme() {
@@ -25,6 +29,22 @@ public class Osoba {
 
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
+	}
+
+	public String getKorIme() {
+		return korIme;
+	}
+
+	public void setKorIme(String korIme) {
+		this.korIme = korIme;
+	}
+
+	public String getLozinka() {
+		return lozinka;
+	}
+
+	public void setLozinka(String lozinka) {
+		this.lozinka = lozinka;
 	}
 
 	@Override

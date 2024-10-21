@@ -49,6 +49,10 @@ public class IzmenaOsobe extends HttpServlet {
 				+ "	<input type=\"text\" name=\"imee\" value=\""  + osobe.get(Integer.parseInt(request.getQueryString())).getIme()  +  "\" />\r\n"
 				+ "	<label>Prezime:</label>\r\n"
 				+ "	<input type=\"text\" name=\"prezimee\" value=\"" + osobe.get(Integer.parseInt(request.getQueryString())).getPrezime() + "\"/>\r\n"
+				+ "	<label>Ime:</label>\r\n"
+				+ "	<input type=\"text\" name=\"korimee\" value=\""  + osobe.get(Integer.parseInt(request.getQueryString())).getKorIme()  +  "\" />\r\n"
+				+ "	<label>Prezime:</label>\r\n"
+				+ "	<input type=\"text\" name=\"lozinkaa\" value=\"" + osobe.get(Integer.parseInt(request.getQueryString())).getLozinka() + "\"/>\r\n"
 				+ "	<button type=\"submit\">Potvrdi</button>\r\n"
 				+ "</form>\r\n"
 				+ "\r\n"
@@ -67,9 +71,13 @@ public class IzmenaOsobe extends HttpServlet {
 		
 		String imeString = request.getParameter("imee");
 		String prezimeString = request.getParameter("prezimee");
+		String korimeString = request.getParameter("korimee");
+		String lozinkaString = request.getParameter("lozinkaa");
 		
 		osobe.get(Integer.parseInt(request.getQueryString())).setIme(imeString);
 		osobe.get(Integer.parseInt(request.getQueryString())).setPrezime(prezimeString);
+		osobe.get(Integer.parseInt(request.getQueryString())).setKorIme(korimeString);
+		osobe.get(Integer.parseInt(request.getQueryString())).setLozinka(lozinkaString);
 		
 		response.sendRedirect("./PrikazOsobaServlet");
 		

@@ -2,17 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Pocetna stranica za unos osobe</title>
+<title>Prijava na sistem</title>
 </head>
 <body>
-<h1>Dodaj novu osobu: </h1>
+<h1>Unesite Vase podatke: </h1>
 
-<form action="DodajOsobuServlet" method="POST">
-	<label>Ime:</label>
-	<input type="text" name="ime" />
-	<label>Prezime:</label>
-	<input type="text" name="prezime" />
-	<button type="submit">Ubaci podatke u server</button>
+<form action="LoginServlet" method="POST">
+	<label>Korisnicko Ime:</label>
+	<input type="text" name="korime" />
+	<label>Lozinka:</label>
+	<input type="text" name="lozinka" />
+	<button type="submit">ULOGUJ SE!</button>
 </form>
 
 </body>

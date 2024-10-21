@@ -50,12 +50,14 @@ public class PrikazOsobaServlet extends HttpServlet {
 			response.getWriter().append("<h1> Osoba broj: " + ivece + "</h1>");
 			response.getWriter().append("<p>Ime: " + osobe.get(i).getIme() + "</p>");
 			response.getWriter().append("<p>Prezime: " + osobe.get(i).getPrezime() + "</p>");
+			response.getWriter().append("<p>Korisnicko ime: " + osobe.get(i).getKorIme() + "</p>");
+			response.getWriter().append("<p>Lozinka: " + osobe.get(i).getLozinka() + "</p>");
 			response.getWriter().append("<a href=PrikazPojedinacneOsobe?" + i + ">Prikazi ovu osobu</a>");
 			response.getWriter().append("<a href=BrisanjePojedinacneOsobe?" + i + ">Obrisi ovu osobu</a>");
 			response.getWriter().append("<a href=IzmenaOsobe?" + i + ">Izmeni ovu osobu</a>");
 		}
 
-		response.getWriter().append("\r\n<a href=index.html>Povratak</a>" + "</body>\r\n" + "</html>");
+		response.getWriter().append("\r\n<a href=DodavanjeOsobe.html>Povratak</a>" + "</body>\r\n" + "</html>");
 	}
 
 	/**
