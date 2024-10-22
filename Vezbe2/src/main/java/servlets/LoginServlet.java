@@ -44,10 +44,12 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// TODO Login trenutno resetuje listu osoba, pa radi samo sa admin
+		// kredencijalima, moze se resiti citanjem iz txt fajla
 		ArrayList<Osoba> osobeArrayList = new ArrayList<Osoba>();
-		
+
 		osobeArrayList.add(new Osoba("admin", "admin", "admin", "admin"));
-		
+
 		ServletContext servletContext = getServletContext();
 		servletContext.setAttribute("osobe", osobeArrayList);
 

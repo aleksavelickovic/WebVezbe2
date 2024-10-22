@@ -3,7 +3,6 @@ package servlets;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
